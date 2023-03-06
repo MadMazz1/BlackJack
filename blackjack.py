@@ -1,8 +1,8 @@
 import requests
 import json
 
-'''-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Mazz's BLACK-JACK Table-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-This is a Black Jack Card game I re-created out of boredom, upon coming across a deck of cards API.
+'''-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Mazz's BLACKJACK Table-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+This is a Blackjack Card game I re-created out of boredom, upon coming across a deck of cards API.
 API = "https://deckofcardsapi.com/"
 
 Another way to do this manually:
