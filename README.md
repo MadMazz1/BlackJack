@@ -1,4 +1,4 @@
-# MazZ's Black-Jack Table
+# MazZ's BlackJack Table
 This is a Black Jack Card game I re-created out of boredom, upon coming across a deck of cards API.
 <br />
 <br />
