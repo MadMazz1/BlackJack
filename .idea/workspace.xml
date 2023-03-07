@@ -49,6 +49,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update:&#10;Added Dealer ability to hit. Dealer will hit if score is &lt;= 14.&#10;&#10;Fixed program crashing if user enters type: str for bet amount. It now asks for an amount..." />
