@@ -157,7 +157,7 @@ def player_cards(deckID, d_card: list):
             value, suit = p_face_cards(list(p_card3))
 
             player_score += int(value)
-            print(f"+1 Card Dealt: {value} of {suit}\nPlayer Score: {player_score}")
+            print(f"+1 Card Dealt: {value} of {suit}\nPlayer Score: {player_score}\n")
 
         elif choice == 'stay'.lower():
             break
@@ -182,65 +182,80 @@ def main(deckID):
     bank = 1000  # Start with $1000.00
     user_input = str()
     welcome = "Welcome to BlackJack!\n To start >> Enter command: 'play'."
-    print(welcome)
     while user_input != 'quit'.lower():
+        print(welcome)
         user_input = input("> ")
 
         if user_input == 'play'.lower():
             while True:
                 bet = input("Bet: $")
-                if bank <= 0:
-                    print("You don't have enough money to play!")
-                    break
+                if bet.isdigit():
+                    if bank <= 0:
+                        print("You don't have enough money to play!")
+                        break
 
-                elif int(bet) > bank:
-                    print("You don't have enough to bet that much!")
-                    break
+                    elif int(bet) > bank:
+                        print("You don't have enough to bet that much!")
+                        break
+
+                    else:
+                        remaining_cards = get_remaining(deckID)
+                        if remaining_cards <= 0:
+                            print("There are no more cards left in the deck!")
+                            break
+
+                        bank -= int(bet)
+
+                        d_card1, d_card2, d_count = dealer_cards(DECK_ID)
+                        p_card1, p_card2, p_count = player_cards(deckID, list(d_card2)[0])
+                        player_score = p_count
+                        print(f"Player Final: {player_score}\n")
+                        if player_score == 21:
+                            print(f"Player hit BLACKJACK!!!")
+
+                        dealer_score = d_count
+                        print(f"-=-=-=-=-=-=-=-=-=-Dealer Cards-=-=-=-=-=-=-=-=-=-=-\n"
+                              f"Face-Down: {list(d_card1)[0]} of {list(d_card1)[1]}\n"
+                              f"Face-Up: {list(d_card2)[0]} of {list(d_card2)[1]}")
+
+                        if dealer_score == 21:
+                            print(f"Dealer hit BLACKJACK!!!")
+
+                        print(f"\nDealer Score: {dealer_score}\n")
+
+                        if player_score <= 21:
+                            if dealer_score <= 14:
+                                d_card3 = draw_cards(1, deckID)
+                                dvalue, dsuit = p_face_cards(list(d_card3))
+
+                                dealer_score += int(dvalue)
+                                print(f"+1 Card Dealt: {dvalue} of {dsuit}\nDealer Score: {dealer_score}\n")
+                            if dealer_score <= 21:
+                                if player_score > dealer_score:
+                                    bank += int(bet) * 2
+                                    print(f"YOU WIN!!!")
+                                    print(f"Bank: ${bank}")
+                                    break
+                                elif player_score == dealer_score:
+                                    bank += bet
+                                    print(f"Wash...")
+                                    print(f"Bank: ${bank}")
+                                    break
+                                elif player_score < dealer_score:
+                                    print(f"Dealer WINS!")
+                                    print(f"Bank: ${bank}")
+                                    break
+                            else:
+                                bank += int(bet) * 2
+                                print(f"Dealer busted! YOU WIN!!!\n"
+                                    f"Bank: ${bank}")
+                        else:
+                            print(f"You busted! Dealer wins!!!")
+                            print(f"Bank: ${bank}")
+                            break
 
                 else:
-                    bank -= int(bet)
-
-                    d_card1, d_card2, d_count = dealer_cards(DECK_ID)
-                    p_card1, p_card2, p_count = player_cards(deckID, list(d_card2)[0])
-                    player_score = p_count
-                    print(f"Player Final: {player_score}\n")
-                    if player_score == 21:
-                        print(f"BLACKJACK!!!!")
-
-                    dealer_score = d_count
-                    print(f"-=-=-=-=-=-=-=-=-=-Dealer Cards-=-=-=-=-=-=-=-=-=-=-\n"
-                          f"Face-Down: {list(d_card1)[0]} of {list(d_card1)[1]}\n"
-                          f"Face-Up: {list(d_card2)[0]} of {list(d_card2)[1]}")
-                    print(f"Dealer Final: {dealer_score}\n")
-
-                    remaining_cards = get_remaining(deckID)
-                    if remaining_cards <= 0:
-                        print("There are no more cards left in the deck!")
-                        break
-
-                    if player_score <= 21:
-                        if dealer_score <= 21:
-                            if player_score > dealer_score:
-                                bank += int(bet) * 2
-                                print(f"YOU WIN!!!")
-                                print(f"Bank: ${bank}")
-                                break
-                            elif player_score == dealer_score:
-                                print(f"Wash...")
-                                print(f"Bank: ${bank}")
-                                break
-                            elif player_score < dealer_score:
-                                print(f"Dealer WINS!")
-                                print(f"Bank: ${bank}")
-                                break
-                        else:
-                            bank += int(bet) * 2
-                            print(f"Dealer busted! YOU WIN!!!\n"
-                                  f"Bank: ${bank}")
-                    else:
-                        print(f"You busted! Dealer wins!!!")
-                        print(f"Bank: ${bank}")
-                        break
+                    print(f"You must enter a bet amount...")
 
 
 if __name__ == "__main__":
