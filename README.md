@@ -10,7 +10,7 @@ Another way to do this manually:
         for val in range(2, 15):
             deck.append((val, suit))
 
-    Then Define face cards with a function similar to below: p_face_cards()
+    Then Define face cards with a function similar to: p_face_cards()
 
 
 Using the API allowed me to play around with JSON objects, and required much more functionality.
