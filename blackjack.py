@@ -14,7 +14,9 @@ Another way to do this manually:
     Then Define face cards with a function similar to below: p_face_cards()
         
 
-Using the API allowed me to play around with JSON objects, and required much more functionality.
+Using the API allowed me to play around with JSON objects, and required much more functionality. 
+
+I will try my best to clean up the code in a future update. I realize some things are a bit messy.
 '''
 
 
@@ -260,3 +262,4 @@ def main(deckID):
 
 if __name__ == "__main__":
     main(DECK_ID)
+
