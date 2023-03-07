@@ -239,7 +239,7 @@ def main(deckID):
                                     print(f"Bank: ${bank}")
                                     break
                                 elif player_score == dealer_score:
-                                    bank += bet
+                                    bank += int(bet)
                                     print(f"Wash...")
                                     print(f"Bank: ${bank}")
                                     break
