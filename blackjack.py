@@ -228,7 +228,7 @@ def main(deckID):
                         if player_score <= 21:
                             if dealer_score <= 14:
                                 d_card3 = draw_cards(1, deckID)
-                                dvalue, dsuit = p_face_cards(list(d_card3))
+                                dvalue, dsuit = d_face_cards(list(d_card3))
 
                                 dealer_score += int(dvalue)
                                 print(f"+1 Card Dealt: {dvalue} of {dsuit}\nDealer Score: {dealer_score}\n")
@@ -250,7 +250,7 @@ def main(deckID):
                             else:
                                 bank += int(bet) * 2
                                 print(f"Dealer busted! YOU WIN!!!\n"
-                                    f"Bank: ${bank}")
+                                      f"Bank: ${bank}")
                         else:
                             print(f"You busted! Dealer wins!!!")
                             print(f"Bank: ${bank}")
