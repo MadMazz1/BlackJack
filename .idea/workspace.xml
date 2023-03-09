@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4ee0410-d411-4533-b413-0a350eaf5bc2" name="Changes" comment="Update:&#10;Added Dealer ability to hit. Dealer will hit if score is &lt;= 14.&#10;&#10;Fixed program crashing if user enters type: str for bet amount. It now asks for an amount..." />
+    <list default="true" id="c4ee0410-d411-4533-b413-0a350eaf5bc2" name="Changes" comment="Update:&#10;Fixed Player/Dealer Wash. bet str &gt;&gt; int" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678169645087</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update:&#10;Fixed Player/Dealer Wash. bet str &gt;&gt; int">
+      <created>1678209965759</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678209965759</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,6 +88,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update:&#10;Added Dealer ability to hit. Dealer will hit if score is &lt;= 14.&#10;&#10;Fixed program crashing if user enters type: str for bet amount. It now asks for an amount..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update:&#10;Added Dealer ability to hit. Dealer will hit if score is &lt;= 14.&#10;&#10;Fixed program crashing if user enters type: str for bet amount. It now asks for an amount..." />
+    <MESSAGE value="Update:&#10;Fixed Player/Dealer Wash. bet str &gt;&gt; int" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update:&#10;Fixed Player/Dealer Wash. bet str &gt;&gt; int" />
   </component>
 </project>
